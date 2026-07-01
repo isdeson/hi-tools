@@ -1,0 +1,197 @@
+.login-page {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+
+  /* 顶部拖拽区域 */
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    -webkit-app-region: drag;
+    z-index: 100;
+  }
+}
+
+/* 左侧插图区 */
+.login-page__left {
+  flex: 1;
+  background: url('@/assets/image/login-background.png') center / cover no-repeat;
+}
+
+/* 右侧表单区 */
+.login-page__right {
+  width: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background: var(--hi-color-bg-1, #fff);
+  position: relative;
+  z-index: 101;
+  -webkit-app-region: no-drag;
+}
+
+.login-form {
+  width: 100%;
+  max-width: 320px;
+}
+
+/* Tab 切换 */
+.login-form__tabs {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 32px;
+  border-bottom: 1px solid #e7e7e7;
+  padding-bottom: 0;
+}
+
+.login-form__tab {
+  background: none;
+  border: none;
+  padding: 8px 0 12px;
+  font-size: 16px;
+  color: var(--hi-color-font-gray, #8f959e);
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s;
+
+  &:hover {
+    color: var(--hi-color-font-black, #1f2329);
+  }
+
+  &--active {
+    color: var(--hi-color-font-black, #1f2329);
+    font-weight: 600;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--hi-color-theme, #2CEAFF);
+      border-radius: 1px;
+    }
+  }
+}
+
+/* 表单内容 */
+.login-form__content {
+  min-height: 280px;
+}
+
+.login-form__desc {
+  font-size: 15px;
+  color: var(--hi-color-font-gray, #8f959e);
+  margin: 0 0 20px;
+}
+
+.login-form__code-inline {
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--hi-color-theme, #00becc);
+  letter-spacing: 2px;
+  margin-left: 10px;
+}
+
+.login-form__actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.login-form__text-btn {
+  border: none;
+  background: none;
+  padding: 0;
+  font-size: 13px;
+  color: var(--hi-color-theme, #00becc);
+  cursor: pointer;
+
+  &:active {
+    opacity: 0.7;
+  }
+}
+
+/* 扫码登录 */
+.login-form__qr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-form__qr-loading {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f7;
+  border-radius: 12px;
+  color: var(--hi-color-font-gray);
+  font-size: 14px;
+}
+
+.login-form__qr-wrapper {
+  position: relative;
+}
+
+.login-form__qr-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.login-form__qr-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+
+  span {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--hi-color-theme, #00becc);
+  }
+}
+
+.login-form__qr-refresh {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 8px;
+  border: none;
+  background: none;
+  color: var(--hi-color-theme, #00becc);
+  font-size: 13px;
+  cursor: pointer;
+  padding: 0;
+
+  &:active {
+    opacity: 0.7;
+  }
+}
+
+.login-form__qr-desc {
+  margin-top: 20px;
+  font-size: 13px;
+  color: var(--hi-color-font-gray, #8f959e);
+}
+
+.login-form__pin-input {
+  margin-top: 30px;
+}

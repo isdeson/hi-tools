@@ -1,0 +1,55 @@
+.pin-input {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  width: 100%;
+
+  input {
+    color: var(--hi-color-theme);
+    font-size: 26px;
+  }
+
+  &__item {
+    flex: 1;
+    min-width: 0;
+    max-width: 52px;
+    height: 52px;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    outline: none;
+    box-shadow: none;
+    transition: border-color 0.2s ease;
+    background: var(--hi-color-bg-1, #fff);
+    color: var(--hi-color-font-black, #1f2329);
+
+    &:focus {
+      border-color: var(--hi-color-theme, #00becc);
+      box-shadow: none;
+      outline: none;
+    }
+
+    &--filled {
+      border-color: var(--hi-color-theme, #00becc);
+    }
+  }
+
+  // 错误状态：抖动动画
+  &--error {
+    animation: pinShake 0.4s ease;
+
+    .pin-input__item {
+      border-color: #e34d59;
+    }
+  }
+}
+
+@keyframes pinShake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+}

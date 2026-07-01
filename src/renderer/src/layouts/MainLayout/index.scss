@@ -1,0 +1,118 @@
+.main-layout-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--hi-color-bg, #f7f7f7);
+}
+
+.main-layout {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* 左侧导航栏 */
+.main-layout__sidebar {
+  width: var(--sidebar-width);
+  flex-shrink: 0;
+  background: var(--hi-color-bg-1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: fixed;
+    top: -200px;
+    left: var(--sidebar-width);
+    bottom: 0;
+    width: 1px;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.06);
+  }
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  padding: 0 8px;
+}
+
+.sidebar-nav__item {
+  position: relative;
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    width: 54px;
+    height: 54px;
+    box-sizing: border-box;
+    padding: 4px 2px 4px 2px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: var(--hi-color-font-gray);
+    transition: all 0.15s ease;
+    user-select: none;
+    position: relative;
+    z-index: 2;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.04);
+    }
+  }
+
+  &--active {
+    .sidebar-nav__item-content {
+      background: var(--hi-color-theme);
+      color: #fff;
+    }
+  }
+}
+
+.sidebar-nav__item-line {
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.sidebar-nav__item-label {
+  font-size: 13px;
+  line-height: 1.3;
+  font-weight: 500;
+  text-align: center;
+  width: 60px;
+  word-break: break-all;
+}
+
+/* 右侧内容区 */
+.main-layout__content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+  background: var(--hi-color-bg-1, #f7f7f7);
+}
+
+/* 页面切换动画 */
+.page-transition {
+  animation: pageIn 0.2s ease-out;
+  height: 100%;
+}
+
+@keyframes pageIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

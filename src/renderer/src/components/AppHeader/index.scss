@@ -1,0 +1,36 @@
+.app-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0 16px 0 90px;
+  height: var(--hi-header-height, 40px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  background: var(--hi-color-bg-1, #fff);
+
+  &--fullscreen {
+    // padding: 0 16px;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: var(--hi-color-font-gray);
+    transition: all 0.15s ease;
+    margin-left: 20px;
+  }
+}

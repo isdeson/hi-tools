@@ -1,0 +1,39 @@
+.import-dialog__list {
+  width: 100%;
+}
+
+.import-dialog__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.02);
+  margin-bottom: 12px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.import-dialog__item-name {
+  font-size: 16px;
+  color: var(--hi-color-font-black);
+  flex-shrink: 0;
+}
+
+.import-dialog__item-desc {
+  font-size: 14px;
+  color: var(--hi-color-font-gray);
+}
+
+.import-dialog__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.import-dialog__footer-right {
+  display: flex;
+  gap: 8px;
+}

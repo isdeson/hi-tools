@@ -1,0 +1,215 @@
+@import url('./reset.scss');
+
+/* 字体定义 */
+@font-face {
+  font-family: 'MiSans';
+  src: url('@/assets/font/MiSans/MiSans-700-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MiSans';
+  src: url('@/assets/font/MiSans/MiSans-500-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MiSans';
+  src: url('@/assets/font/MiSans/MiSans-400-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DINPro';
+  src: url('@/assets/font/D-DIN-PRO/D-DIN-PRO-400-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DINPro';
+  src: url('@/assets/font/D-DIN-PRO/D-DIN-PRO-500-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DINPro';
+  src: url('@/assets/font/D-DIN-PRO/D-DIN-PRO-700-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DouyinSans';
+  src: url('@/assets/font/DouyinSans/DouyinSansBold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 覆盖 TDesign 主题色为项目主题色 */
+:root {
+  --td-brand-color: #00becc;
+  --td-brand-color-hover: #33ccd7;
+  --td-brand-color-active: #00a8b5;
+  --td-brand-color-disabled: rgba(0, 190, 204, 0.4);
+  --td-brand-color-light: rgba(0, 190, 204, 0.1);
+  --td-brand-color-light-hover: rgba(0, 190, 204, 0.15);
+  --td-brand-color-focus: rgba(0, 190, 204, 0.2);
+  --td-brand-color-1: rgba(0, 190, 204, 0.04);
+  --td-brand-color-2: rgba(0, 190, 204, 0.08);
+  --td-brand-color-3: rgba(0, 190, 204, 0.12);
+  --td-brand-color-4: rgba(0, 190, 204, 0.2);
+  --td-brand-color-5: rgba(0, 190, 204, 0.35);
+  --td-brand-color-6: rgba(0, 190, 204, 0.5);
+  --td-brand-color-7: #00becc;
+  --td-brand-color-8: #00a8b5;
+  --td-brand-color-9: #00929e;
+  --td-brand-color-10: #007c87;
+  /* 主题色按钮文字用白色 */
+  --td-text-color-anti: #ffffff;
+  /* 去掉 TDesign 默认的 shadow + border 共存 */
+  --td-shadow-1: none;
+  --td-shadow-2: none;
+  --td-shadow-3: none;
+  /* 输入框聚焦只保留 border，去掉 outline 和 shadow */
+  --td-input-border-color-focus: #00becc;
+  --td-input-box-shadow-focus: none;
+}
+
+body {
+  --hi-color-theme: #00becc;
+  --hi-color-bg: #f5f6f7;
+  --hi-color-bg-1: #ffffff;
+  --hi-color-bg-2: #f0f1f2;
+  --hi-color-font-black: #1f2329;
+  --hi-color-font-gray: #8f959e;
+  --hi-color-font-white: #fff;
+  --hi-header-height: 40px;
+  --sidebar-width: 80px;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    --hi-color-theme: #00becc;
+    --hi-color-bg: #1a1a1a;
+    --hi-color-bg-1: #232324;
+    --hi-color-bg-2: #2d2d2e;
+    --hi-color-font-black: rgba(255, 255, 255, 0.9);
+    --hi-color-font-gray: rgba(255, 255, 255, 0.45);
+    --hi-color-font-white: #fff;
+  }
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  color: var(--hi-color-font-black);
+  font-family:
+    'MiSans',
+    'DINPro',
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+}
+
+/* 滚动条 - 飞书风格（轻量隐约） */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.12);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+}
+
+.dragable {
+  /* 允许拖拽 */
+  -webkit-app-region: drag;
+}
+
+.no-drag {
+  /* 不允许拖拽 */
+  -webkit-app-region: no-drag;
+}
+
+/* TDesign 输入框聚焦去掉 outline 和 shadow */
+.t-input--focused,
+.t-input:focus-within {
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.t-button {
+  --ripple-color: transparent !important;
+}
+
+.t-dialog--default {
+  padding: 0px !important;
+  max-height: 85vh;
+  overflow-y: auto;
+  display: flex !important;
+  flex-direction: column;
+}
+
+.t-dialog__header {
+  padding: 20px !important;
+}
+
+.t-dialog__body {
+  padding: 0 20px 0 20px !important;
+}
+
+.t-dialog__footer {
+  padding: 20px !important;
+}
+
+/* Dialog 取消按钮统一使用 primary outline 风格 */
+.t-dialog__cancel {
+  color: var(--td-brand-color) !important;
+  border-color: var(--td-brand-color) !important;
+}
+
+.t-button__suffix {
+  flex-shrink: 0 !important;
+}
+
+.page__title {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 700;
+  font-family: 'DouyinSans', 'MiSans', sans-serif;
+}

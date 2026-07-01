@@ -1,0 +1,10 @@
+.webview-page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &__frame {
+    flex: 1;
+    border: none;
+  }
+}

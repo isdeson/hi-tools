@@ -1,0 +1,47 @@
+.lock-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(247, 247, 247, 0.5);
+  backdrop-filter: blur(50px);
+
+  &__content {
+    text-align: center;
+  }
+
+  &__icon {
+    margin-bottom: 16px;
+    color: var(--hi-color-theme, #2484fe);
+  }
+
+  &__title {
+    margin: 0 0 8px;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--hi-color-font-black);
+  }
+
+  &__desc {
+    margin: 0 0 32px;
+    font-size: 14px;
+    color: var(--hi-color-font-gray);
+  }
+
+  &__logout {
+    margin-top: 24px;
+    border: none;
+    font-size: 15px;
+    color: var(--hi-color-theme);
+
+    &:hover {
+      background: transparent;
+      color: var(--hi-color-theme);
+    }
+  }
+}

@@ -1,0 +1,56 @@
+.setting-page {
+  padding: 24px;
+}
+
+.setting-section {
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  &__label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--hi-color-font-black);
+  }
+
+  &__status {
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    background: rgba(0, 190, 204, 0.08);
+    color: var(--hi-color-theme);
+    font-weight: 500;
+  }
+
+  &__password {
+    margin-top: 12px;
+  }
+
+  &__tip {
+    font-size: 13px;
+    color: var(--hi-color-font-gray);
+    margin: 0 0 16px;
+  }
+
+  &__pin-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__desc {
+    margin-top: 8px;
+    font-size: 12px;
+    color: var(--hi-color-font-gray);
+  }
+}

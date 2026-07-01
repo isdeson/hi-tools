@@ -1,0 +1,150 @@
+.home-page {
+  padding: 24px;
+
+  .home-welcome-banner {
+    border-radius: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    height: 160px;
+    width: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+  }
+}
+
+/* 快捷导航区域 */
+.home-quick-nav {
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+
+  &__header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__search {
+    width: 300px;
+
+    .t-input {
+      height: 34px;
+      border-radius: 100px;
+      padding-left: 20px;
+      background-color: transparent;
+    }
+  }
+
+  &__title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--td-text-color-primary);
+    margin: 0;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+  }
+
+  &__item {
+    --fast-nav-height: 45px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    height: var(--fast-nav-height);
+    overflow: hidden;
+    background: var(--hi-color-bg, #f0f1f2);
+    padding: 0 10px;
+  }
+
+  &__item-icon {
+    color: var(--hi-color-theme);
+    margin-right: 4px;
+  }
+
+  &__item-name {
+    font-size: 13px;
+    color: var(--hi-color-font-black);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    box-sizing: border-box;
+    flex: 1;
+  }
+
+  &__item-pin {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    color: var(--hi-color-theme);
+    display: flex;
+    align-items: center;
+  }
+
+  &__empty {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 0;
+    gap: 12px;
+
+    p {
+      margin: 0;
+      font-size: 14px;
+      color: var(--hi-color-font-gray);
+    }
+  }
+}
+
+/* Dialog 内表单样式 */
+.home-quick-nav__dialog-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.home-quick-nav__dialog-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  label {
+    font-size: 13px;
+    color: var(--td-text-color-secondary);
+  }
+}
+
+.home-quick-nav__dialog {
+  .t-dialog__footer {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+
+    button,
+    .t-button {
+      flex: 1;
+      height: 40px;
+    }
+  }
+}

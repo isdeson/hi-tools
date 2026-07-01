@@ -1,0 +1,132 @@
+.project-form__content {
+  display: flex;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.project-form__left {
+  flex: 1.06;
+  padding: 0 20px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.project-form__right {
+  flex: 1;
+  padding: 0 0 0 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.project-form__section-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--hi-color-font-gray);
+  margin: 0;
+}
+
+.project-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+
+  label {
+    font-size: 13px;
+    color: var(--hi-color-font-gray);
+    font-weight: 500;
+  }
+}
+
+.project-form__links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.project-form__link-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  transition: all 0.15s;
+  cursor: grab;
+  background: var(--hi-color-bg, #f0f1f2);
+
+  &:active { cursor: grabbing; }
+
+  &--dragover {
+    border-color: var(--hi-color-theme, #00becc);
+    background: rgba(0, 190, 204, 0.04);
+  }
+}
+
+.project-form__link-handle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  flex-shrink: 0;
+  color: var(--hi-color-font-gray);
+  cursor: grab;
+}
+
+.project-form__link-inputs {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+  width: 100%;
+}
+
+.project-form__link-remove {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  color: var(--hi-color-font-gray);
+  flex-shrink: 0;
+
+  &:hover {
+    background: transparent;
+  }
+}
+
+.project-form__link-add {
+  border: 1px dashed rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  background: transparent;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.15s;
+  margin-top: 20px;
+
+  &:hover {
+    border-color: var(--hi-color-theme, #00becc);
+    background: transparent;
+  }
+}
+
+.project-form__footer {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+
+  button,
+  .t-button {
+    flex: 1;
+    height: 40px;
+  }
+}
