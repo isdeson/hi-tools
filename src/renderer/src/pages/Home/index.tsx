@@ -208,14 +208,15 @@ function Home() {
 
   return (
     <div className="home-page">
-      <h3 className="page__title">{getTimeText()}，欢迎回来 ~</h3>
+      <div className="home-page-header">
+        <h3 className="page__title">{getTimeText()}，欢迎回来 ~</h3>
       <h2>{currentDate}</h2>
       <Swiper
         animation="slide"
         autoplay
         direction="horizontal"
         duration={300}
-        interval={2000}
+        interval={10000}
         loop
         stopOnHover
         trigger="hover"
@@ -228,11 +229,16 @@ function Home() {
           </SwiperItem>
         ))}
       </Swiper>
+      </div>
 
       {/* 快捷导航区域 */}
       <div className="home-quick-nav">
         <div className="home-quick-nav__header">
-          <h4 className="home-quick-nav__title">快捷导航</h4>
+          <h4 className="home-quick-nav__title">
+            <div className="home-quick-nav__title-text">
+              快捷导航
+            </div>
+          </h4>
           <div className="home-quick-nav__header-actions">
             <Input
               className="home-quick-nav__search"
